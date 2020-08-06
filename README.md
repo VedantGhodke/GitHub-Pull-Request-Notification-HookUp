@@ -1,7 +1,9 @@
-# Hook
-> A Github webhook handler primarily to notify about your PRs.
+# GitHub Pull Request Notification HookUp
+
+This is a Github webhook handler primarily to notify about your pull requests.
 
 ## Preface
+
 Our team relies on Github PRs and reviews to release new stuff and bug fixes as many teams do; major bottleneck in this scenario is that people don't review quite often even if PRs are assigned to them and they need to nudge about pending reviews. I, personally wouldn't want to be a bottleneck for anybody's dear feature. Github does notify you via email but it usually gets piled up. To resolve this, I initially tried to allocate two slots in my calendar for reviews, it doesn't really work out. So I'm trying something dynamic which works like this:
 
 - A new review is assigned to me, I get a notification.
@@ -12,10 +14,11 @@ Our team relies on Github PRs and reviews to release new stuff and bug fixes as 
 I just started doing this, so I'm not sure it would make things better for me. This repository has the first part implemented for now, as I'm still testing out the calendar stuff. 
 
 ## Setup
-Assuming you've Go set up in your machine:
+
+Assuming you've got Go set up in your machine:
 ```bash
   # clone the repository
-  git clone git@github.com:umayr/hook.git
+  git clone git@github.com:VEDANTGHODKE/GitHub Pull Request Notification HookUp.git
   
   # make the binary
   make
@@ -24,7 +27,8 @@ Assuming you've Go set up in your machine:
   make zip
 ```
 ## Deployment
-I'm using aws lambda for this, you can use whatever you want but you would have to write server yourself (don't forget to send a PR for that). For lambda you can do something like this:
+
+I'm using AWS lambda for this, you can use whatever you want but you would have to write server yourself (don't forget to send a PR for that). For lambda you can do something like this:
 ```bash
   aws lambda create-function \
     --region region \
